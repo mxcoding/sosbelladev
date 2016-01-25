@@ -1,0 +1,35 @@
+.container{
+	width: 99%;
+	margin-top: 20px;
+}
+p.big{
+	font-size: 1.3em;
+}
+p.justificado{
+	text-align: justify;
+}
+h3{
+	margin-top: 0;
+}
+.btn{
+	padding: 0 10px 8px 10px;
+}
+.thumb{
+	margin:15px auto;
+	width: 90%;
+}
+.thumb .mini-primera{
+	margin-left: 20px;
+}
+.thumb .mini-segunda{
+	margin-left: -20px;
+}
+.btn.btn-sm{
+	padding:0px 10px 8px 10px;
+}
+span.color{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border-radius: 15%;
+}

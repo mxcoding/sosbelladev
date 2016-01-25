@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/*!
+  Paper Collapse v0.4.0
+
+  Collapsible paper cards.
+
+  Made with love by bbo - ©2015 Alexander Rühle
+  MIT License http://opensource.org/licenses/MIT
+*/
+.collapse-card {
+  background-color: transparent;
+  border-bottom: 1px solid #eee;
+  color: #777;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  box-shadow: 1px 1px 0px 2px rgba(0,0,0,0.3);
+  z-index: 200;
+}
+.collapse-card__body .collapse-card{
+  box-shadow: none;
+}
+.collapse-card * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.collapse-card.active {
+  display: block;
+  margin: 1rem -1rem;
+}
+.collapse-card.active .collapse-card__heading:hover::after {
+  content: "$";
+}
+.collapse-card .collapse-card__heading:hover::after {
+  content: "%";
+}
+
+.collapse-card__heading {
+  cursor: pointer;
+  padding: 1rem;
+  position: relative;
+}
+.collapse-card__heading:before, .collapse-card__heading:after {
+  content: " ";
+  display: table;
+}
+.collapse-card__heading:after {
+  clear: both;
+}
+.collapse-card__heading i {
+  float: left;
+}
+.collapse-card__heading::after {
+  color: #404040;
+  font-family: 'sosbella';
+  font-size: 1.8em;
+  padding-left: .4rem;
+  position: absolute;
+  right: 3em;
+  top: 1em;
+}
+
+.collapse-card__title {
+  font-size: 1rem;
+  line-height: 2rem;
+  margin: 0 2rem 0 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.collapse-card__body {
+  padding: 1rem;
+  display: none;
+}
+.collapse-card__body .collapse-card .collapse-card__body{
+  display: none !important;
+}
+.collapse-card__body .collapse-card.active .collapse-card__body{
+  display: block  !important;
+}
+.collapse-card__body div[class^='col-'],div[class*='col-']>h4{
+    color: #000;
+}
+.collapse-card__title h3{
+  color: #424242;
+  font-weight: bold;
+}
+.collapse-card__title h4{
+  color: #616161;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=paper-collapse.css.map */

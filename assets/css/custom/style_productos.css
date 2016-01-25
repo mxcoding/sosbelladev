@@ -1,0 +1,80 @@
+.container{
+	width: 99%;
+	margin-top: 20px;
+}
+.container>h3{
+	margin:0;
+}
+.nav-tabs{
+	border-radius: .4em;
+	background-color: #f5f5f5;
+}
+.nav-tabs>li{
+	-webkit-transition: all .2s ease-out;
+	   -moz-transition: all .2s ease-out;
+	    -ms-transition: all .2s ease-out;
+	     -o-transition: all .2s ease-out;
+	        transition: all .2s ease-out;
+}
+.nav-tabs>li>a{
+	color: #777 !important;
+}
+.nav-tabs>li>a:hover{
+	color: #00709e !important;
+}
+.tab-content .img-responsive{
+	margin:10px auto;
+}
+.thumbnail:hover{
+	border-color: #00709e;
+}
+figure img {
+	opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.thumbnail:hover figure img{
+	opacity: .7;
+}
+.caption h4.titulo_precio{
+	margin: 0;
+}
+.caption .btn-agregar-carrito{
+	display: block;
+	margin: 0 auto;
+}
+.caption .btn-group .dropdown-menu{
+	width: 50px !important;
+	min-width:50px !important;
+}
+span.color{
+	display: block;
+	width: 15px;
+	height: 15px;
+	border-radius: 15%;
+	margin-left: -2px;
+}
+span.color.color_selected{
+	display: block;
+	float: none;
+	margin: 5px auto;
+	width: 15px;
+	height: 15px;
+	border-radius: 15%;
+}
+.nuevos h4>i{
+	position: relative;
+	top: -3px;
+	font-size: 10px;
+}
+.carro{
+	margin-top: 0;
+}
+.carro a{
+	background-color: #fff !important;
+	margin-right: 9px;
+}
+.form-control:focus,
+.form-control:focus {
+    background-image: linear-gradient(#00709e,#00709e),linear-gradient(#d2d2d2,#d2d2d2) !important;
+}

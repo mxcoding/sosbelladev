@@ -1,0 +1,30 @@
+.table > tbody > tr > td {
+    vertical-align: middle;
+}
+.btn i{
+	font-size: .7em;
+}
+.btn-quitar{
+	padding:0px 3px 6px 4px !important;
+	color: #fff !important;
+}
+.btn-quitar i{
+	font-size: 1em;
+}
+.btn-danger{
+	background-color: #E53935 !important;
+	text-transform: none;
+}
+
+.btn{
+	padding-top: 5px;
+	padding-right: 15px;
+	padding-left: 15px;
+	text-transform: none;
+}
+.btn-warning{
+	background-color: #FB8C00 !important;
+}
+.btn-success{
+	background-color: #388E3C !important;
+}
