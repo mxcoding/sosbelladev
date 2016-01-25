@@ -16,7 +16,12 @@
 				<h3 class="text-center">Listar Categorias</h3>
 				<div class="row">
 					<div class="col-lg-4 centrada boton">
-						<button class="btn btn-warning top btn-raised btn-sm"><i class="icon-editar"></i> Editar</button>
+						<form action="<?php echo base_url('categorias/editar') ?>" method="POST">
+							<input type="hidden" class="editar" name="id" value="">
+							<div class="text-center">
+								<button type="submit" class="btn btn-warning top btn-raised btn-sm"><i class="icon-editar"></i> Editar</button>
+							</div>
+						</form>
 						<a class="btn btn-danger top btn-raised btn-sm" data-toggle="modal" href='#modal-id'><i class="icon-eliminar"></i> Eliminar</a>
 					</div>	
 				</div>
@@ -73,14 +78,10 @@
 	var tabla=$('#tabla_franquicias').DataTable({
 		"language": {
 			"url":"<?php echo base_url('assets/js');?>/Spanish.json"
-        },
-        "pagingType": "numbers"
+        }
 	});
-	$('.boton .btn-warning').on('click',function(event) {
-        document.location.href="categorias/editar/"+$(this).data('id');
-    });
     $('.boton .btn-danger').on('click',function(event) {
-        var nombre=$('.table>tbody>tr.selected>td:eq(0)').text();
+        var nombre=$('.table>tbody>tr.selected>td:eq(1)').text();
         $('#clave_categoria').empty().text(nombre);
     });
     $('#eliminar').click(function(event) {
@@ -88,7 +89,7 @@
     	  url: '<?php echo base_url("categorias/eliminarCategoria");?>',
     	  type: 'POST',
     	  dataType: 'json',
-    	  data: {id:$('.btn-danger').data('id')},
+    	  data: {IdCategoria:$('.btn-danger').data('id')},
     	  beforeSend:function(){
     	  	$('.spinner').fadeIn();
     	  },
@@ -98,7 +99,11 @@
     	  success: function(data, textStatus, xhr) {
     	    if(data){
     	    	tabla.row('.selected').remove().draw(false);
+    	    	mostrarMensaje('Categoria eliminada correctamente','ok');
     	    	$('.modal').modal('hide');
+    	    }
+    	    else{
+    	    	mostrarMensaje('Ocurrio un problema','error');
     	    }
     	  },
     	  error: function(xhr, textStatus, errorThrown) {

@@ -22,12 +22,13 @@
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="form-group">
 								<label for="cbxFamilia" class="control-label azul">Familia</label>
-								<select id="cbxFamilia" name="familia" class="form-control azul" required>
+								<select id="cbxFamilia" name="IdFamilia" class="form-control azul" required>
+
 									<?php foreach($familias as $familia):?>
-									<?php if($familia->id==$categoria->familia):?>
-										<option value="<?php echo $familia->id;?>" selected><?php echo $familia->nombre;?></option>
+									<?php if($familia->IdFamilia==$categoria->Familia):?>
+										<option value="<?php echo $familia->IdFamilia;?>" selected><?php echo $familia->Nombre;?></option>
 									<?php else:?>
-										<option value="<?php echo $familia->id;?>"><?php echo $familia->nombre;?></option>
+										<option value="<?php echo $familia->IdFamilia;?>"><?php echo $familia->Nombre;?></option>
 									<?php endif;?>
 									<?php endforeach;?>
 								</select>
@@ -36,20 +37,20 @@
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="form-group">
 								<label class="control-label azul" for="txtNombre">Nombre</label>
-								<input class="form-control azul" id="txtNombre" name="nombre" value="<?php echo $categoria->nombre;?>" type="text" required>
+								<input class="form-control azul" id="txtNombre" name="nombre" value="<?php echo $categoria->Nombre;?>" type="text" required>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="form-group">
 								<label class="control-label azul" for="txtDescripcion">Descripcion</label>
-								<input class="form-control azul" id="txtDescripcion" name="descripcion" value="<?php echo $categoria->descripcion;?>" type="text" required>
+								<input class="form-control azul" id="txtDescripcion" name="descripcion" value="<?php echo $categoria->Descripcion;?>" type="text" required>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-lg-3 centrada" style="text-align:center;">
 							<button type="submit" class="btn btn-warning btn-raised btn-sm top"><i class="icon-editar"></i> Editar</button>
-							<input type="hidden" name="id" value="<?php echo $categoria->id; ?>">
+							<input type="hidden" name="idCategoria" value="<?php echo $categoria->IdCategoria; ?>">
 							<div id="barra">
 								<div class="progress">
 									<div class="indeterminate"></div>
@@ -66,30 +67,31 @@
 	$(function (){
 		var form=$('#frmEditarCategoria').submit(function(event) {
 			event.preventDefault();
-			jQuery.ajax({
-			  url: '<?php echo base_url("categorias/editarCategoria");?>',
-			  type: 'POST',
-			  dataType: 'json',
-			  data:form.serialize(),
-			  beforeSend:function(){
-			  	$('#barra').fadeIn();
-			  },
-			  complete: function(xhr, textStatus) {
-			    $('#barra').fadeOut();
-			  },
-			  success: function(data, textStatus, xhr) {
-			    if(data){
-			    	mostrarMensaje('Categoria agregada correctamente','ok');
-			    }
-			    else{
-			    	mostrarMensaje('Ha ocurrido un problema','error');
-			    }
-			  },
-			  error: function(xhr, textStatus, errorThrown) {
-			    console.log("Error al editar la categoria");
-			  }
-			});
-			
+			if(!hayMensaje()){
+				jQuery.ajax({
+				  url: '<?php echo base_url("categorias/editarCategoria");?>',
+				  type: 'POST',
+				  dataType: 'json',
+				  data:form.serialize(),
+				  beforeSend:function(){
+				  	$('#barra').fadeIn();
+				  },
+				  complete: function(xhr, textStatus) {
+				    $('#barra').fadeOut();
+				  },
+				  success: function(data, textStatus, xhr) {
+				    if(data){
+				    	mostrarMensaje('Categoria agregada correctamente','ok');
+				    }
+				    else{
+				    	mostrarMensaje('Ha ocurrido un problema','error');
+				    }
+				  },
+				  error: function(xhr, textStatus, errorThrown) {
+				    console.log("Error al editar la categoria");
+				  }
+				});
+			}
 		});
 	});
 </script>

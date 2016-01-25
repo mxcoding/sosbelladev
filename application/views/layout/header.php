@@ -65,7 +65,6 @@
 		<?php if(isset($tabla)):?>
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.dataTables.min.js');?>"></script>
 		<script type="text/javascript" src="<?php echo base_url('assets/js/dataTables.bootstrap.min.js');?>"></script>
-		<script type="text/javascript" src="<?php echo base_url('assets/js/dataTables.tableTools.js')?>"></script>
 		<?php endif;?>
 
 		<?php if(isset($imagen)):?>

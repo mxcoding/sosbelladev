@@ -26,11 +26,11 @@ class Categorias extends CI_Controller
 		$this->load->view('admin/categorias/agregar',array('familias'=>$this->familias->obtenerTodos()));
 		$this->load->view('layout/footer');
 	}
-	public function editar($id=null)
+	public function editar()
 	{
-		$this->load->view('layout/header',array('titulo'=>'Editar Categoria','css'=>'navbar'));
+		$this->load->view('layout/header',array('titulo'=>'Editar Categoria','mensajes'=>TRUE));
 		$this->load->view('layout/navbar');
-		$this->load->view('admin/categorias/editar',array('categoria'=>$this->categorias->obtener($id),'familias'=>$this->familias->obtenerTodos()));
+		$this->load->view('admin/categorias/editar',array('categoria'=>$this->categorias->obtener($this->input->post('id')),'familias'=>$this->familias->obtenerTodos()));
 		$this->load->view('layout/footer');
 	}
 	public function agregarCategoria()
@@ -56,7 +56,7 @@ class Categorias extends CI_Controller
 			'idCategoria'=>$this->input->post('idCategoria'),
 			'nombre'=>$this->input->post('nombre'),
 			'descripcion'=>$this->input->post('descripcion'),
-			'idFamilia'=>$this->input->post('familia')
+			'idFamilia'=>$this->input->post('IdFamilia')
 		);
 		if($this->categorias->editar((object) $categoria))
 		{
@@ -69,7 +69,7 @@ class Categorias extends CI_Controller
 	}
 	public function eliminarCategoria()
 	{
-		if($this->categorias->eliminar($this->input->post('id')))
+		if($this->categorias->eliminar($this->input->post('IdCategoria')))
 		{
 			echo json_encode(TRUE);
 		}

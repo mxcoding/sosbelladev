@@ -30,7 +30,7 @@ class CategoriasModel extends CI_Model
 	{
 		try
 		{
-			$resultado=$this->db->query("CategoriaEditar $categoria->idCategoria,'$categoria->nombre','$categoria->descripcion',$categoria->idFamilia");
+			$resultado=$this->db->query("CategoriaEditar '$categoria->idCategoria','$categoria->nombre','$categoria->descripcion','$categoria->idFamilia'");
 			if($resultado){
 				return TRUE;
 			}
@@ -47,7 +47,7 @@ class CategoriasModel extends CI_Model
 	public function eliminar($idCategoria){
 		try
 		{
-			$resultado=$this->db->query("CategoriaEliminar $idCategoria");
+			$resultado=$this->db->query("CategoriaEliminar '$idCategoria'");
 			if($resultado)
 			{
 				return TRUE;
@@ -85,7 +85,7 @@ class CategoriasModel extends CI_Model
 	{
 		try
 		{
-			$resultado=$this->db->query("CategoriaObtener $idCategoria")->row();
+			$resultado=$this->db->query("CategoriaObtener '$idCategoria'")->row();
 			if($resultado)
 			{
 				return aObjeto($resultado);
