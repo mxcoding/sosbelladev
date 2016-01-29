@@ -14,7 +14,7 @@
 	<div class="col-xs-12 col-sm-9 col-md-9 col-lg-10">
 		<div class="panel panel-default">
 			<div class="panel-body animated fadeIn">
-				<form id="frmAgregarEmpleado">
+				<form id="frmEditarFranquicia" method="POST">
 					<div class="row">
 						<div class="container">
 							<h3 class="text-center">Editar Franquicia</h3>
@@ -22,30 +22,44 @@
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="form-group">
 								<label class="control-label azul" for="txtClave">Clave</label>
-								<input class="form-control azul" id="txtClave" value="F001" type="text" required>
+								<input class="form-control azul" name="Clave" value="<?php echo $franquicia->Clave;?>" type="text" required>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="form-group">
 								<label class="control-label azul" for="txtNombre">Nombre</label>
-								<input class="form-control azul" id="txtNombre" value="Franquicia Centro" type="text" required>
+								<input class="form-control azul" name="Nombre" value="<?php echo $franquicia->Nombre;?>" type="text" required>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="form-group">
-							<label for="cbxFranquiciatario" class="control-label azul">Franquiciatario</label>
-								<select id="cbxFranquiciatario" class="form-control azul">
-									<option selected>Raúl Pérez Concepción</option>
-									<option>Juan Ramón Saenz</option>
-									<option>Pedro García Ramirez</option>
-									<option>Josue Valencia Hernández</option>
+								<label for="cbxFranquiciatario" class="control-label azul">Franquiciatario</label>
+								<select id="cbxFranquiciatario" name="IdFranquiciatario" class="form-control azul" required>
+									<?php if($franquiciatarios):?>
+										<?php foreach($franquiciatarios as $franquiciatario):?>
+											<?php if($franquiciatario->IdFranquiciatario==$franquicia->FranquiciatarioIdFranquiciatario):?>
+												<option value="<?php echo $franquiciatario->IdFranquiciatario;?>" selected><?php echo $franquiciatario->Nombre." ".$franquiciatario->Apellidos;?></option>	
+											<?php else:?>
+												<option value="<?php echo $franquiciatario->IdFranquiciatario;?>"><?php echo $franquiciatario->Nombre." ".$franquiciatario->Apellidos;?></option>
+											<?php endif;?>
+										<?php endforeach;?>
+									<?php else:?>
+										<option disabled selected>No hay franquiciatarios registrados</option>
+									<?php endif;?>
 								</select>
 							</div>
+							<input type="hidden" name="IdFranquicia" value="<?php echo $franquicia->IdFranquicia;?>">
+							<input type="hidden" name="clave_anterior" value="<?php echo $franquicia->Clave;?>">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-lg-3 centrada" style="text-align:center;">
 							<button type="submit" class="btn btn-warning btn-raised btn-sm top"><i class="icon-editar"></i> Editar</button>
+							<div id="barra" class="animated slideInUp">
+								<div class="progress">
+									<div class="indeterminate"></div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</form>
@@ -55,10 +69,38 @@
 </div>
 <script>
 	$(function () {
-		$('#txtFechaNac').datepicker({
-			lenguage:"es",
-			autoclose:true
+		$("select").selectize();
+		form=$('#frmEditarFranquicia').submit(function(e){
+			e.preventDefault();
+			if(!hayMensaje())
+			{
+				$.ajax({
+					url:"<?php echo base_url('franquicias/editarFranquicia');?>",
+					type: 'post',
+					dataType:'json',
+					data:form.serialize(),
+					beforeSend:function(){
+						$('#barra').fadeIn();
+					},
+					complete:function(){
+						$('#barra').fadeOut();
+					},
+					success: function (data) {
+						if(data.estatus)
+						{
+							mostrarMensaje(data.mensaje,'ok');
+						}
+						else
+						{
+							mostrarMensaje(data.mensaje,'alerta');
+						}
+					},
+					error:function(x,h,r){
+						$('#barra').fadeOut();
+						console.log("Error al editar ")
+					}
+				});
+			}
 		});
-		$('input[id=txtTiempoComida]').tooltip({'trigger':'focus','tittle':'dskldklfk'});
 	});
 </script>

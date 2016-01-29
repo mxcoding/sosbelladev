@@ -59,9 +59,9 @@
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6">
 							<div class="form-group">
-								<label for="cbxPerfil" class="control-label azul">Perfil</label>
+								<label for="cbxPerfil" class="control-label azul">Rol</label>
 								<select id="cbxPerfil" class="form-control azul">
-									<option value="" disabled selected>Seleccione un perfil</option>
+									<option value="" disabled selected>Seleccione un rol</option>
 									<option>Administrador</option>
 									<option>Vendedor</option>
 								</select>
@@ -72,26 +72,6 @@
 								<label for="txtCodigoVendedor" class="control-label azul">Código Vendedor</label>
 								<input class="form-control azul" id="txtCodigoVendedor" type="text" required>
 							</div>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6">
-							<div class="radio radio-primary">
-					          <label>
-					            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-					            Punto de Venta
-					          </label>
-					        </div>
-					        <div class="radio radio-primary">
-					          <label>
-					            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-					            Sistema Web
-					          </label>
-					        </div>
-					        <div class="radio radio-primary">
-					          <label>
-					            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-					            Ambos
-					          </label>
-					        </div>
 						</div>
 					</div>
 					<div class="row">

@@ -10,7 +10,8 @@ class Empleados extends CI_Controller
 		{
 			redirect('/', 'refresh');
 		}
-		$this->load->model('EmpleadosModel','empleado');
+		$this->load->model('EmpleadoModel','empleado');
+		$this->load->model('PersonaModel','persona');
 		$this->load->helper('file');
 	}
 	public function index()
@@ -41,13 +42,13 @@ class Empleados extends CI_Controller
 		}
 		$this->load->view('layout/footer');
 	}
-	public function editar($codigo=null)
+	public function editar()
 	{
-		$this->load->view('layout/header',array('titulo'=>'Editar Empleado '.$codigo,'imagen'=>TRUE,'calendario'=>TRUE,'reloj'=>TRUE,'numeric'=>TRUE,'mensajes'=>TRUE));
+		$this->load->view('layout/header',array('titulo'=>'Editar Empleado '.$this->input->post('id'),'imagen'=>TRUE,'calendario'=>TRUE,'reloj'=>TRUE,'numeric'=>TRUE,'mensajes'=>TRUE));
 		$this->load->view('layout/navbar');
 		if($this->session->userdata('perfil')=='administrador')
 		{
-			$this->load->view('admin/empleados/editar',array('empleado'=>$this->empleado->obtener($codigo)));
+			$this->load->view('admin/empleados/editar',array('empleado'=>$this->empleado->obtener($this->input->post('id'))));
 		}
 		else
 		{
@@ -64,129 +65,131 @@ class Empleados extends CI_Controller
 	}
 	public function editarEmpleado()
 	{
+		$data_persona=aObjeto(array(
+			'IdPersona'=>$this->input->post('IdPersona'),
+			'Nombre'=>$this->input->post('nombre'),
+			'Apellidos'=>$this->input->post('apellidos'),
+			'Telefono'=>$this->input->post('telefono'),
+			'Direccion'=>$this->input->post('direccion'),
+			'Celular'=>$this->input->post('celular')
+			));
+		$data_empleado=aObjeto(array(
+			'IdEmpleado'=>$this->input->post('IdEmpleado'),
+			'Clave'=>$this->input->post('codigo'),
+			'FechaNacimiento'=>$this->input->post('fecha_nacimiento'),
+			'Mail'=>$this->input->post('email'),
+			'SueldoHora'=>$this->input->post('salario_hora'),
+			'TiempoComida'=>$this->input->post('tiempo_comida'),
+			'HoraEntrada'=>$this->input->post('hora_entrada'),
+			'HoraSalida'=>$this->input->post('hora_salida'),
+			'IdSucursal'=>'NULL',
+			'IdPersona'=>$data_persona->IdPersona
+		));
 		$foto=$this->input->post('foto');
-		$codigo=$this->input->post('codigo');
-		if(strpos($foto,'base64')!==false)
+
+		if($this->input->post('codigo_anterior')!=$data_empleado->Clave)//CAMBIÓ DE CLAVE
 		{
-			$new=TRUE;
-			$a=explode(';',$foto);
-			$b=explode('/',$a[0]);
-			$c=explode(',',$a[1]);
-			$extension=$b[1];
-			$data_imagen=$c[1];
-			$data = str_replace(' ', '+', $data_imagen);
-			$foto=trim($codigo.'.'.$extension);
-		}
-		else
-		{
-			$new=FALSE;
-			$a=explode('/',$foto);
-			if($codigo!=$this->input->post('codigo_anterior'))
+			if(!$this->empleado->existe($data_empleado->Clave))
 			{
-				$change=TRUE;
-				$b=explode('.',$a[7]);
-				$foto=$codigo.'.'.$b[1];
+				if($this->persona->editar($data_persona))
+				{
+					if($this->empleado->editar($data_empleado))
+					{
+						if(strpos($foto,'base64'))
+						{
+							$nombre_foto=img64aNombre($data_empleado->IdEmpleado,$foto);
+							almacenarImagenFile($nombre_foto,img64adata($foto));
+							if($this->empleado->actualizarFoto($data_empleado->IdEmpleado,$nombre_foto))
+							{
+								echo json_encode(TRUE);
+							}
+						}
+						else
+						{
+							echo json_encode(TRUE);
+						}
+
+					}
+				}
 			}
 			else
 			{
-				$change=FALSE;
-				$foto=$a[7];
+				echo json_encode(array('mensaje'=>'El codigo ya existe'));
 			}
 		}
-		$datosempleado=array(
-			'codigo'=>$codigo,
-			'nombre'=>$this->input->post('nombre'),
-			'apellidos'=>$this->input->post('apellidos'),
-			'fecha_nacimiento'=>$this->input->post('fecha_nacimiento'),
-			'direccion'=>$this->input->post('direccion'),
-			'email'=>$this->input->post('email'),
-			'telefono'=>$this->input->post('telefono'),
-			'celular'=>$this->input->post('celular'),
-			'salario_hora'=>$this->input->post('salario_hora'),
-			'tiempo_comida'=>$this->input->post('tiempo_comida'),
-			'foto'=>$foto
-		);
-		$empleado=(object) $datosempleado;
-		if($this->empleado->editar($this->input->post('codigo_anterior'),$empleado))
+		else
 		{
-			if($new)
+			if($this->persona->editar($data_persona))
 			{
-				if(is_file('assets/img/empleados/'.$this->input->post('foto_antigua')))
+				if($this->empleado->editar($data_empleado))
 				{
-					unlink('assets/img/empleados/'.$this->input->post('foto_antigua'));
+					if(strpos($foto,'base64'))
+					{
+						$nombre_foto=img64aNombre($data_empleado->IdEmpleado,$foto);
+						almacenarImagenFile($nombre_foto,img64adata($foto));
+						if($this->empleado->actualizarFoto($data_empleado->IdEmpleado,$nombre_foto))
+						{
+							echo json_encode(TRUE);
+						}
+					}
+					else
+					{
+						echo json_encode(TRUE);
+					}
+
 				}
-				if($r=write_file('assets/img/empleados/'.$foto,base64_decode($data)))
+			}
+		}
+	}
+	public function agregarEmpleado()
+	{
+		//DATOS DE PERSONA
+		$data_persona=aObjeto(array(
+			'IdPersona'=>guid(),
+			'Nombre'=>$this->input->post('nombre'),
+			'Apellidos'=>$this->input->post('apellidos'),
+			'Telefono'=>$this->input->post('telefono'),
+			'Direccion'=>$this->input->post('direccion'),
+			'Celular'=>$this->input->post('celular')
+			));
+		$data_empleado=aObjeto(array(
+			'IdEmpleado'=>guid(),
+			'Clave'=>$this->input->post('codigo'),
+			'FechaNacimiento'=>$this->input->post('fecha_nacimiento'),
+			'Mail'=>$this->input->post('email'),
+			'SueldoHora'=>$this->input->post('salario_hora'),
+			'TiempoComida'=>$this->input->post('tiempo_comida'),
+			'HoraEntrada'=>$this->input->post('hora_entrada'),
+			'HoraSalida'=>$this->input->post('hora_salida'),
+			'IdSucursal'=>'NULL',
+			'IdPersona'=>$data_persona->IdPersona
+			));
+		if(!$this->empleado->existe($data_empleado->Clave))
+		{
+			if($this->persona->agregar($data_persona))
+			{
+				if($this->empleado->agregar($data_empleado))
 				{
-					echo json_encode(TRUE);
+					$data=$this->input->post('foto');
+					$nombre_foto=img64aNombre($data_empleado->IdEmpleado,$data);
+					if($nombre_foto!='default.png')
+					{
+						almacenarImagenFile($nombre_foto,img64adata($data));
+					}
+					if($this->empleado->actualizarFoto($data_empleado->IdEmpleado,$nombre_foto))
+					{
+						echo json_encode(TRUE);
+					}
 				}
 				else
 				{
 					echo json_encode(FALSE);
 				}
 			}
-			else
-			{
-				if($change)
-				{
-					rename('assets/img/empleados/'.$this->input->post('foto_antigua'),'assets/img/empleados/'.$foto);
-				}
-				echo json_encode(TRUE);
+			else{
+				echo json_encode(FALSE);
 			}
-		}
-		else{
-			echo json_encode(FALSE);
-		}
 
-	}
-	public function agregarEmpleado()
-	{
-		$foto=$this->input->post('foto');
-		$codigo=$this->input->post('codigo');
-		if($foto!='undefined')
-		{
-			$imagen=TRUE;
-			$a=explode(';',$foto);
-			$b=explode('/',$a[0]);
-			$c=explode(',',$a[1]);
-			$extension=$b[1];
-			$data_imagen=$c[1];
-			$data = str_replace(' ', '+', $data_imagen);
-			$foto=trim($codigo.'.'.$extension);
-		}
-		else
-		{
-			$imagen=FALSE;
-			$foto='default.png';
-		}
-		$datosempleado=array(
-			'id'=>trim(com_create_guid(),'{}'),
-			'codigo'=>$codigo,
-			'nombre'=>$this->input->post('nombre'),
-			'apellidos'=>$this->input->post('apellidos'),
-			'fecha_nacimiento'=>$this->input->post('fecha_nacimiento'),
-			'direccion'=>$this->input->post('direccion'),
-			'email'=>$this->input->post('email'),
-			'telefono'=>$this->input->post('telefono'),
-			'celular'=>$this->input->post('celular'),
-			'salario_hora'=>floatval($this->input->post('salario_hora')),
-			'tiempo_comida'=>intval($this->input->post('tiempo_comida')),
-			'foto'=>$foto,
-			'estado'=>TRUE
-		);
-		$empleado=(object) $datosempleado;
-		if($this->empleado->agregar($empleado))
-		{
-			if($imagen)
-			{
-				if($r=write_file('assets/img/empleados/'.$foto,base64_decode($data)))
-				{
-					echo json_encode(TRUE);
-				}	
-			}
-			else
-			{
-				echo json_encode(TRUE);
-			}
 		}
 		else
 		{

@@ -16,14 +16,13 @@
 				<h3 class="text-center">Listar Familias</h3>
 				<div class="row">
 					<div class="col-lg-4 centrada boton">
-						<!--<button class="btn btn-warning top btn-raised btn-sm" id="editar"><i class="icon-editar"></i> Editar</button>-->
 						<form action="<?php echo base_url('familias/editar') ?>" method="POST">
 							<input type="hidden" class="editar" name="id" value="">
 							<div class="text-center">
 								<button type="submit" class="btn btn-warning top btn-raised btn-sm"><i class="icon-editar"></i> Editar</button>
 							</div>
 						</form>
-						<a class="btn btn-danger top btn-raised btn-sm" id="eliminar" data-toggle="modal" href='#modal-id'><i class="icon-eliminar"></i> Eliminar</a>
+						<a class="btn btn-danger top btn-raised btn-sm" data-toggle="modal" href='#modal-id'><i class="icon-eliminar"></i> Eliminar</a>
 					</div>	
 				</div>
 				<div class="row animated slideInUp">
@@ -60,56 +59,56 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title"></h4>
+					<h4 class="modal-title text-center">Eliminar Familia</h4>
 				</div>
 				<div class="modal-body">
 					<p>¿Realmente desea eliminar la familia <strong id="clave_familia"></strong>?</p>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default btn-raised top btn-sm" data-dismiss="modal"><i class="icon-cerrar"></i> cerrar</button>
-					<button type="button" id="conf_eliminar" class="btn btn-danger btn-raised top btn-sm"><i class="icon-eliminar"></i> Eliminar <div class="spinner"></div></button>
+					<button type="button" id="eliminar" class="btn btn-danger btn-raised top btn-sm"><i class="icon-eliminar"></i> Eliminar <div class="spinner"></div></button>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 <script defer="defer">
-	var tabla=$('#tabla_familias').DataTable({
-		"language": {
-			"url":"<?php echo base_url('assets/js');?>/Spanish.json"
-        }
+	$(function () {
+		var tabla=$('#tabla_familias').DataTable({
+			"language": {
+				"url":"<?php echo base_url('assets/js');?>/Spanish.json"
+	        }
+		});
+	    $('#eliminar').on('click',function(event) {
+	        var nombre=$('.table>tbody>tr.selected>td:eq(0)').text();
+	        $('#clave_familia').empty().text(nombre);
+	    });
+	    $('#eliminar').click(function(event) {
+	    	$.ajax({
+	    		url: '<?php echo base_url("familias/eliminarFamilia");?>',
+	    		type: 'POST',
+	    	  	dataType: 'json',
+	    	  	data: {id:$('.btn-danger').data('id')},
+	    	  	beforeSend:function(){
+	    	  		$('.spinner').fadeIn();
+	    	  	},
+	    	  	success: function(data, textStatus, xhr) {
+	    	    	if(data){
+	    	    		tabla.row('.selected').remove().draw(false);
+	    	    		$('.modal').modal('hide');
+	    	    		mostrarMensaje('Familia eliminada correctamente','ok');
+	    	    	}
+	    	    	else{
+	    	    		console.log("Error al eliminar la familia");
+	    	    	}
+	    	  	},
+	    	  	error: function(xhr, textStatus, errorThrown) {
+	    	    	console.log("Error al eliminar la familia");
+	    	  	},
+	    	  	complete:function(){
+	   		  		$('.spinner').fadeOut();
+	   		  	}
+	    	});
+	    });
 	});
-    $('#eliminar').on('click',function(event) {
-        var nombre=$('.table>tbody>tr.selected>td:eq(0)').text();
-        $('#clave_familia').empty().text(nombre);
-        $('.modal-title').empty().text('Eliminar familia');
-    });
-    $('#conf_eliminar').click(function(event) {
-    	jQuery.ajax({
-    	  url: '<?php echo base_url("familias/eliminarFamilia");?>',
-    	  type: 'POST',
-    	  dataType: 'json',
-    	  data: {id:$('.btn-danger').data('id')},
-    	  beforeSend:function(){
-    	  	$('.spinner').fadeIn();
-    	  },
-    	  success: function(data, textStatus, xhr) {
-    	    if(data){
-    	    	tabla.row('.selected').remove().draw(false);
-    	    	$('.modal').modal('hide');
-    	    	mostrarMensaje('Familia eliminada correctamente','ok');
-    	    }
-    	    else{
-    	    	console.log("Error al eliminar la familia");
-    	    }
-    	  },
-    	  error: function(xhr, textStatus, errorThrown) {
-    	    console.log("Error al eliminar la familia");
-    	  },
-    	  complete:function(){
-   		  	$('.spinner').fadeOut();
-   		  }
-    	});
-    	
-    });
 </script>

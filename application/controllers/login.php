@@ -30,11 +30,23 @@ class login extends CI_Controller {
 					echo json_encode($resp);
 				}
 				else{
-					$session_data = array(
-						'idusuario' => $usuario->IdUsuario,
-						'usuario'=>$usuario->Usuarioo,
-						'perfil'=>'administrador'
-					);
+					if($this->input->post('usuario')=='administrador')
+					{
+						$session_data = array(
+							'idusuario' => $usuario->IdUsuario,
+							'usuario'=>$usuario->Usuarioo,
+							'perfil'=>'administrador'
+						);
+					}
+					else
+					{
+						$session_data = array(
+							'idusuario' => $usuario->IdUsuario,
+							'usuario'=>$usuario->Usuarioo,
+							'perfil'=>'franquiciatario'
+						);
+					}
+					
 					$this->usuario->desbloquear($this->input->post('usuario'));
 					$this->session->set_userdata($session_data);
 					echo json_encode(array('respuesta'=>TRUE));

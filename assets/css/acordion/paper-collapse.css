@@ -69,6 +69,7 @@
   overflow: hidden;
   white-space: nowrap;
 }
+.collapse-card
 
 .collapse-card__body {
   padding: 1rem;
@@ -80,6 +81,21 @@
 .collapse-card__body .collapse-card.active .collapse-card__body{
   display: block  !important;
 }
+
+.collapse-card__body .collapse-card .collapse-card__body .collapse-card .collapse-card__body{
+  display: none !important;
+}
+.collapse-card__body .collapse-card.active .collapse-card__body .collapse-card.active .collapse-card__body{
+  display: block  !important;
+}
+
+.inner_collapse h3{
+  font-size: .8rem;
+  color: #424242;
+}
+
+
+
 .collapse-card__body div[class^='col-'],div[class*='col-']>h4{
     color: #000;
 }
@@ -90,6 +106,153 @@
 .collapse-card__title h4{
   color: #616161;
   font-weight: bold;
+}
+
+
+@media only screen and (max-width: 320px){
+  .collapse-card__title h3
+  {
+    color: #555555;
+    font-weight: bold;
+  }
+  .collapse-card__title
+  {
+    margin: 0;
+  }
+  .collapse-card__heading:after
+  {
+    color: #555;
+    font-size: 1.5em;
+    right: 1em;
+    top: 1.3em;
+  }
+  .checkbox label,
+  .radio label, label
+  {
+    font-size: 14px;
+  }
+  .collapse-card__title h4
+  {
+    font-size: 14px;
+  }
+}
+
+
+@media only screen and (max-width: 375px){
+  .collapse-card__title h3
+  {
+    color: #555555;
+    font-weight: bold;
+  }
+  .collapse-card__title
+  {
+    margin: 0;
+  }
+  .collapse-card__heading:after
+  {
+    color: #555;
+    font-size: 1.5em;
+    right: 1em;
+    top: 1.3em;
+  }
+  .checkbox label,
+  .radio label, label
+  {
+    font-size: 14px;
+  }
+  .collapse-card__title h4
+  {
+    font-size: 14px;
+  }
+}
+
+
+@media only screen and (max-width: 414px){
+  .collapse-card__title h3
+  {
+    color: #555555;
+    font-weight: bold;
+  }
+  .collapse-card__title
+  {
+    margin: 0;
+  }
+  .collapse-card__heading:after
+  {
+    color: #555;
+    font-size: 1.5em;
+    right: 1em;
+    top: 1.3em;
+  }
+  .checkbox label,
+  .radio label, label
+  {
+    font-size: 16px;
+  }
+  .collapse-card__title h4
+  {
+    font-size: 16px;
+  }
+}
+
+
+@media only screen and (max-width: 768px){
+  .collapse-card__title h3
+  {
+    color: #555555;
+    font-weight: bold;
+  }
+  .collapse-card__title
+  {
+    margin: 0;
+  }
+  .collapse-card__heading:after
+  {
+    color: #555;
+    font-size: 1.5em;
+    right: 1em;
+    top: 1.3em;
+  }
+  .checkbox label,
+  .radio label, label
+  {
+    font-size: 14px;
+  }
+  .collapse-card__title h4
+  {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 1024px){
+  .collapse-card__title h3
+  {
+    color: #555555;
+    font-weight: bold;
+  }
+  .collapse-card__title
+  {
+    margin: 0;
+  }
+  .collapse-card__heading:after
+  {
+    color: #555;
+    font-size: 1.5em;
+    right: 1em;
+    top: 1.3em;
+  }
+  .checkbox label,
+  .radio label, label
+  {
+    font-size: 12px;
+  }
+  .collapse-card__title h4
+  {
+    font-size: 12px;
+  }
+  .panel-heading{
+    font-size: 12px;
+  }
 }
 
 /*# sourceMappingURL=paper-collapse.css.map */

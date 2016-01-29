@@ -15,14 +15,10 @@
 			<div class="panel-body">
 				<h3 class="text-center">Consultar Rol</h3>
 				<div class="col-lg-4 centrada">
-					<div class="form-group">
-						<label for="cbxRol" class="control-label azul">Rol</label>
-						<select id="cbxRol" class="form-control azul">
-							<option value="" disabled selected>Seleccione un rol</option>
-							<option>Administrador</option>
-							<option>Vendedor</option>
-							<option>Cajero</option>
-						</select>
+					<label class="control-label azul" for="">Nombre del Rol</label>
+					<input type="text" class="form-control azul">
+					<div class="text-center">
+						<button class="btn btn-success btn-sm btn-raised top"><i class="icon-agregar"></i> Agregar</button>	
 					</div>
 				</div>
 				<div class="row">
@@ -33,7 +29,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row animated slideInUp" id="roles" style="display:none;">
+		<div class="row animated slideInUp" id="roles">
 
 			<!--PERMISOS WEB-->
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

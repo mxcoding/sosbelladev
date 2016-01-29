@@ -22,7 +22,9 @@
 							<button type="submit" class="btn btn-morado btn-sm btn-raised btn-block top"><i class="icon-log-in"></i> Ingresar</button>
 						</div>
 						<p class="text-center" style="margin-top:20px;">
-							Si no recuerdas tu contraseña comunicate con tu administrador 5551234567
+							Si no recuerdas tu contraseña comunicate con tu administrador 5551234567<br>
+							<?php echo guid();?><br>
+							<?php echo sha1('123');?>
 						</p>
 					</form>
 				</div>

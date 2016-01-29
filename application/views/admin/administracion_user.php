@@ -12,6 +12,26 @@
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 animated fadeIn">
 		<div class="panel panel-default">
+			<a href="<?php echo base_url('roles');?>">
+				<div class="panel-body">
+					<i class="icon-rol"></i>
+					<h4 class="text-center">Roles</h4>
+				</div>
+			</a>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 animated fadeIn">
+		<div class="panel panel-default">
+			<a href="<?php echo base_url('usuarios');?>">
+				<div class="panel-body">
+					<i class="icon-usuarios"></i>
+					<h4 class="text-center">Usuarios</h4>
+				</div>
+			</a>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 animated fadeIn">
+		<div class="panel panel-default">
 			<div class="panel-body">
 				<a href="<?php echo base_url('compras');?>">
 					<i class="icon-producto"></i>
@@ -40,16 +60,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 animated fadeIn">
-		<div class="panel panel-default">
-			<a href="<?php echo base_url('roles');?>">
-				<div class="panel-body">
-					<i class="icon-rol"></i>
-					<h4 class="text-center">Roles</h4>
-				</div>
-			</a>
-		</div>
-	</div>
+	
 	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 animated fadeIn">
 		<div class="panel panel-default">
 			<a href="<?php echo base_url('monitoreo');?>">

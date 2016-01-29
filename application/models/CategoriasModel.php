@@ -22,7 +22,7 @@ class CategoriasModel extends CI_Model
 			
 		}
 		catch (Exception $e) {
-			log_message('error',$e);
+			log_message('error','Error -> CategoriasModel->agregar()',$e->getMessage());
 			return FALSE;
 		}
 	}

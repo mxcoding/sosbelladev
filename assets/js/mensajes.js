@@ -20,8 +20,8 @@ function mostrarMensaje(texto,tipo){
             killer: true,
             template: _template,
             animation: {
-                open: 'animated flipInX', // Animate.css class names
-                close: 'animated flipOutX',
+                open: 'animated slideInUp', // Animate.css class names
+                close: 'animated slideOutDown',
                 easing: 'swing',
                 speed: 500 // opening & closing animation speed
             },

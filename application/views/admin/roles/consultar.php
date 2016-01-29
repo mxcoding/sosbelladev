@@ -10,7 +10,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-xs-12 col-sm-9 col-md-9 col-lg-10">
+	<div class="col-xs-12 col-sm-9 col-md-9 col-lg-10" style="margin-bottom:20px;">
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<h3 class="text-center">Consultar Rol</h3>
@@ -251,41 +251,107 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-3 col-md-4 col-sm-6"><!-- Catalogos Productos -->
-								<div class="panel panel-default">
-									<div class="panel-heading">Productos
-										<div class="checkbox blanco">
-											<label>
-												<input type="checkbox">
-											</label>
+
+							<div class="col-lg-6 col-md-4 col-sm-6"><!-- Catalogos Productos -->
+								<div class="collapse-card">
+									<div class="collapse-card__heading">
+										<div class="collapse-card__title">
+											<h4 class="text-center">Módulo Productos
+												<div class="checkbox modulo">
+													<label>
+														<input type="checkbox">
+													</label>
+												</div>
+											</h4>
 										</div>
 									</div>
-									<div class="panel-body">
-										<div class="panel-body">
-											<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-												<div class="checkbox">
-													<label><input type="checkbox" name="franquicias"> Agregar</label>
+									<div class="collapse-card__body">
+										<div class="row">
+											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+												<div class="panel panel-default">
+													<div class="panel-heading">Productos
+														<div class="checkbox blanco">
+															<label>
+																<input type="checkbox">
+															</label>
+														</div>
+													</div>
+													<div class="panel-body">
+														<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+															<div class="checkbox">
+																<label><input type="checkbox" name="franquicias"> Agregar</label>
+															</div>
+														</div>
+														<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+															<div class="checkbox">
+																<label><input type="checkbox" name="franquicias"> Eliminar</label>
+															</div>
+														</div>
+														<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+															<div class="checkbox">
+																<label><input type="checkbox" name="franquicias"> Editar</label>
+															</div>
+														</div>
+														<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+															<div class="checkbox">
+																<label><input type="checkbox" name="franquicias"> Consultar</label>
+															</div>
+														</div>
+													</div>
 												</div>
 											</div>
-											<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-												<div class="checkbox">
-													<label><input type="checkbox" name="franquicias"> Eliminar</label>
+											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+												<div class="panel panel-default">
+													<div class="panel-heading">Cantidades
+														<div class="checkbox blanco">
+															<label>
+																<input type="checkbox">
+															</label>
+														</div>
+													</div>
+													<div class="panel-body">
+														<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+															<div class="checkbox">
+																<label><input type="checkbox" name="franquicias"> Agregar</label>
+															</div>
+														</div>
+														<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+															<div class="checkbox">
+																<label><input type="checkbox" name="franquicias"> Eliminar</label>
+															</div>
+														</div>
+														<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+															<div class="checkbox">
+																<label><input type="checkbox" name="franquicias"> Editar</label>
+															</div>
+														</div>
+														<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+															<div class="checkbox">
+																<label><input type="checkbox" name="franquicias"> Consultar</label>
+															</div>
+														</div>
+													</div>
 												</div>
 											</div>
-											<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-												<div class="checkbox">
-													<label><input type="checkbox" name="franquicias"> Editar</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-												<div class="checkbox">
-													<label><input type="checkbox" name="franquicias"> Consultar</label>
+										</div>
+										<div class="row">
+											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 centrada">
+												<div class="panel panel-default">
+													<div class="panel-heading">Códigos
+														<div class="checkbox blanco">
+															<label>
+																<input type="checkbox">
+															</label>
+														</div>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+						</div>
+						<div class="row">
 							<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><!-- Catalogos Facturas -->
 								<div class="panel panel-default">
 									<div class="panel-heading">Facturas
@@ -311,6 +377,17 @@
 									</div>
 								</div>
 							</div>
+							<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><!-- Catalogos Facturas -->
+								<div class="panel panel-default">
+									<div class="panel-heading">Inventario
+										<div class="checkbox blanco">
+											<label>
+												<input type="checkbox">
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 						<div class="row">
 							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><!-- Catalogos Reportes -->
@@ -326,37 +403,7 @@
 										<div class="panel-body">
 											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 												<div class="checkbox">
-													<label><input type="checkbox" name="franquicias"> Reporte Ventas Sucursales</label>
-												</div>
-											</div>
-											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-												<div class="checkbox">
-													<label><input type="checkbox" name="franquicias"> Reporte de Nómina</label>
-												</div>
-											</div>
-											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-												<div class="checkbox">
-													<label><input type="checkbox" name="franquicias"> Reporte Ventas Sosbella</label>
-												</div>
-											</div>
-											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-												<div class="checkbox">
-													<label><input type="checkbox" name="franquicias"> Reporte de Asistencia</label>
-												</div>
-											</div>
-											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-												<div class="checkbox">
-													<label><input type="checkbox" name="franquicias"> Reporte más Vendido</label>
-												</div>
-											</div>
-											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-												<div class="checkbox">
-													<label><input type="checkbox" name="franquicias"> Reporte de Vendedores</label>
-												</div>
-											</div>
-											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-												<div class="checkbox">
-													<label><input type="checkbox" name="franquicias"> Reporte Cortes de Caja</label>
+													<label><input type="checkbox" name="franquicias"> Reporte ventas Sucursales</label>
 												</div>
 											</div>
 											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -366,7 +413,42 @@
 											</div>
 											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 												<div class="checkbox">
-													<label><input type="checkbox" name="franquicias"> Reportes Obsoletos</label>
+													<label><input type="checkbox" name="franquicias"> Reporte Ventas Sosbella</label>
+												</div>
+											</div>
+											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+												<div class="checkbox">
+													<label><input type="checkbox" name="franquicias"> Reporte de Productos descontinuados</label>
+												</div>
+											</div>
+											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+												<div class="checkbox">
+													<label><input type="checkbox" name="franquicias"> Reporte más Vendido</label>
+												</div>
+											</div>
+											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+												<div class="checkbox">
+													<label><input type="checkbox" name="franquicias"> Reporte de Productos descontinuados sin existencia</label>
+												</div>
+											</div>
+											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+												<div class="checkbox">
+													<label><input type="checkbox" name="franquicias"> Reporte Cortes de Caja</label>
+												</div>
+											</div>
+											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+												<div class="checkbox">
+													<label><input type="checkbox" name="franquicias"> Reporte de productos mínimos</label>
+												</div>
+											</div>
+											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+												<div class="checkbox">
+													<label><input type="checkbox" name="franquicias"> Reporte Pagos a empleados</label>
+												</div>
+											</div>
+											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+												<div class="checkbox">
+													<label><input type="checkbox" name="franquicias"> Reporte de Asistencia</label>
 												</div>
 											</div>
 										</div>
@@ -375,18 +457,7 @@
 							</div>
 							<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><!-- Catalogos Inventario -->
 								<div class="panel panel-default">
-									<div class="panel-heading">Inventario
-										<div class="checkbox blanco">
-											<label>
-												<input type="checkbox">
-											</label>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><!-- Catalogos Inventario -->
-								<div class="panel panel-default">
-									<div class="panel-heading">Monitoreo de Ventas
+									<div class="panel-heading">Roles
 										<div class="checkbox blanco">
 											<label>
 												<input type="checkbox">
@@ -394,29 +465,89 @@
 										</div>
 									</div>
 									<div class="panel-body">
-										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+										<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 											<div class="checkbox">
 												<label><input type="checkbox" name="franquicias"> Agregar</label>
 											</div>
 										</div>
-										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+										<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 											<div class="checkbox">
 												<label><input type="checkbox" name="franquicias"> Eliminar</label>
 											</div>
 										</div>
-										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+										<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 											<div class="checkbox">
 												<label><input type="checkbox" name="franquicias"> Editar</label>
 											</div>
 										</div>
-										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+										<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 											<div class="checkbox">
-												<label><input type="checkbox" name="franquicias"> Monitoreo</label>
+												<label><input type="checkbox" name="franquicias"> Consultar</label>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+							<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><!-- Catalogos Inventario -->
+								<div class="collapse-card">
+									<div class="collapse-card__heading">
+										<div class="collapse-card__title">
+											<h4>Módulo Productos</h4>
+										</div>
+									</div>
+									<div class="collapse-card__body">
+										<div class="row">
+											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+												<div class="panel panel-default">
+													<div class="panel-heading">Monitoreo de Ventas
+														<div class="checkbox blanco">
+															<label>
+																<input type="checkbox">
+															</label>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+												<div class="panel panel-default">
+													<div class="panel-heading">Agregar Metas
+														<div class="checkbox blanco">
+															<label>
+																<input type="checkbox">
+															</label>
+														</div>
+													</div>
+													<div class="panel-body">
+														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+															<div class="checkbox">
+																<label><input type="checkbox" name="franquicias"> Agregar</label>
+															</div>
+														</div>
+														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+															<div class="checkbox">
+																<label><input type="checkbox" name="franquicias"> Eliminar</label>
+															</div>
+														</div>
+														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+															<div class="checkbox">
+																<label><input type="checkbox" name="franquicias"> Editar</label>
+															</div>
+														</div>
+														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+															<div class="checkbox">
+																<label><input type="checkbox" name="franquicias"> Monitoreo</label>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div>
 				</div>
@@ -574,7 +705,42 @@
 											</div>
 											<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><!-- Devoluciones -->
 												<div class="panel panel-default">
-													<div class="panel-heading">Devoluciones
+													<div class="panel-heading">Promociones
+														<div class="checkbox blanco">
+															<label>
+																<input type="checkbox">
+															</label>
+														</div>
+													</div>
+													<div class="panel-body">
+														<div class="panel-body">
+															<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+																<div class="checkbox">
+																	<label><input type="checkbox" name="franquicias"> Agregar</label>
+																</div>
+															</div>
+															<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+																<div class="checkbox">
+																	<label><input type="checkbox" name="franquicias"> Eliminar</label>
+																</div>
+															</div>
+															<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+																<div class="checkbox">
+																	<label><input type="checkbox" name="franquicias"> Editar</label>
+																</div>
+															</div>
+															<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+																<div class="checkbox">
+																	<label><input type="checkbox" name="franquicias"> Consultar</label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><!-- Devoluciones -->
+												<div class="panel panel-default">
+													<div class="panel-heading">Promociones
 														<div class="checkbox blanco">
 															<label>
 																<input type="checkbox">
@@ -585,17 +751,7 @@
 														<div class="panel-body">
 															<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 																<div class="checkbox">
-																	<label><input type="checkbox" name="franquicias"> Consultar (Rango Fec)</label>
-																</div>
-															</div>
-															<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																<div class="checkbox">
-																	<label><input type="checkbox" name="franquicias"> Consultar Venta</label>
-																</div>
-															</div>
-															<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																<div class="checkbox">
-																	<label><input type="checkbox" name="franquicias"> Guardar e Imprimir</label>
+																	<label><input type="checkbox" name="franquicias"> Guardar</label>
 																</div>
 															</div>
 														</div>
@@ -636,6 +792,15 @@
 														</div>
 													</div>
 												</div>
+												<div class="panel panel-default">
+													<div class="panel-heading">Alertas
+														<div class="checkbox blanco">
+															<label>
+																<input type="checkbox">
+															</label>
+														</div>
+													</div>
+												</div>
 											</div>
 											<div class="col-lg-6 col-md-4 col-sm-6 col-xs-12" id="inventario"><!-- Inventario -->
 												<div class="panel panel-default">
@@ -648,22 +813,22 @@
 													</div>
 													<div class="panel-body">
 														<div class="panel-body">
-															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+															<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
 																<div class="checkbox">
 																	<label><input type="checkbox" name="franquicias"> Consultar</label>
 																</div>
 															</div>
-															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+															<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
 																<div class="checkbox">
 																	<label><input type="checkbox" name="franquicias"> Capturar Inventario</label>
 																</div>
 															</div>
-															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+															<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
 																<div class="checkbox">
 																	<label><input type="checkbox" name="franquicias"> Ajustar</label>
 																</div>
 															</div>
-															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+															<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
 																<div class="checkbox">
 																	<label><input type="checkbox" name="franquicias"> Imprimir</label>
 																</div>
@@ -683,27 +848,27 @@
 													</div>
 													<div class="panel-body">
 														<div class="panel-body">
-															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+															<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
 																<div class="checkbox">
 																	<label><input type="checkbox" name="franquicias"> Buscar Producto</label>
 																</div>
 															</div>
-															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+															<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
 																<div class="checkbox">
 																	<label><input type="checkbox" name="franquicias"> Guardar</label>
 																</div>
 															</div>
-															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+															<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
 																<div class="checkbox">
 																	<label><input type="checkbox" name="franquicias"> Agregar</label>
 																</div>
 															</div>
-															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+															<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
 																<div class="checkbox">
 																	<label><input type="checkbox" name="franquicias"> Imprimir</label>
 																</div>
 															</div>
-															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+															<div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
 																<div class="checkbox">
 																	<label><input type="checkbox" name="franquicias"> Cancelar</label>
 																</div>
@@ -712,21 +877,21 @@
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row">
-											<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><!-- Alertas -->
-												<div class="panel panel-default">
-													<div class="panel-heading">Alertas
-														<div class="checkbox blanco">
-															<label>
-																<input type="checkbox">
-															</label>
-														</div>
-													</div>
-												</div>
-											</div>
 										</div><!--TERMINA ADMINISTRACIÓN INVENTARIO-->
-										<div class="row">
+
+
+
+
+
+
+
+
+
+
+
+
+
+										<div class="row" style="margin-top:20px;">
 											<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><!-- Administracion de Reportes -->
 												<div class="panel panel-default">
 													<div class="panel-heading blanco">Administracion de Reportes</div>
@@ -756,6 +921,7 @@
 													</div>
 												</div>
 											</div>
+
 											<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><!-- Cuentas por Cobrar -->
 												<div class="panel panel-default">
 													<div class="panel-heading">Cuentas por Cobrar
@@ -775,10 +941,8 @@
 														</div>
 													</div>
 												</div>
-											</div>
-											<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><!-- Monitoreo de Pedidos -->
 												<div class="panel panel-default">
-													<div class="panel-heading">Monitoreo de Pedidos
+													<div class="panel-heading">Cortes de Caja
 														<div class="checkbox blanco">
 															<label>
 																<input type="checkbox">
@@ -786,23 +950,100 @@
 														</div>
 													</div>
 													<div class="panel-body">
-														<div class="panel-body">
-															<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-																<div class="checkbox">
-																	<label><input type="checkbox" name="franquicias"> Actualizar Estatus</label>
-																</div>
+														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+															<div class="checkbox">
+																<label><input type="checkbox" name="franquicias"> Confirmar Corte</label>
 															</div>
 														</div>
 													</div>
 												</div>
 											</div>
+											<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+												<div class="collapse-card">
+													<div class="collapse-card__heading">
+														<div class="collapse-card__title inner_collapse">
+															<h4 class="text-center">Monitoreo</h4>
+														</div>
+													</div>
+													<div class="collapse-card__body">
+														<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+															<div class="panel panel-default">
+																<div class="panel-heading">Monitoreo Pedidos
+																	<div class="checkbox blanco">
+																		<label>
+																			<input type="checkbox">
+																		</label>
+																	</div>
+																</div>
+																<div class="panel-body">
+																   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																		<div class="checkbox">
+																			<label><input type="checkbox" name="franquicias"> Actualizar Estatus</label>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+															<div class="panel panel-default">
+																<div class="panel-heading">Monitoreo Traspasos
+																	<div class="checkbox blanco">
+																		<label>
+																			<input type="checkbox">
+																		</label>
+																	</div>
+																</div>
+																<div class="panel-body">
+																   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																		<div class="checkbox">
+																			<label><input type="checkbox" name="franquicias"> Actualizar Estatus</label>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>	
 										</div><!--TERMINA ADMINISTRACIÓN REPORTES-->
 									</div>
 								</div>
 							</div>
 						</div><!--TERMINA MÓDULO DE ADMINISTRACIÓN-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 						<div class="row">
-							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+							<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 								<div class="collapse-card">
 									<div class="collapse-card__heading">
 										<div class="collapse-card__title">
@@ -817,7 +1058,7 @@
 									</div>
 									<div class="collapse-card__body">
 										<div class="row">
-											<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><!-- Punto de Venta -->
+											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 												<div class="panel panel-default">
 													<div class="panel-heading">Punto de Venta
 														<div class="checkbox blanco">
@@ -871,49 +1112,82 @@
 									</div>
 								</div>
 							</div>
-						</div><!--TERMINA MODULO VENTAS-->
-						<div class="row">
-							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								<div class="collapse-card">
-									<div class="collapse-card__heading">
-										<div class="collapse-card__title">
-											<h4 class="text-center">Módulo Configuración
-												<div class="checkbox modulo">
-													<label>
-														<input type="checkbox">
-													</label>
+
+
+
+							<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+								<div class="row">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+										<div class="collapse-card">
+											<div class="collapse-card__heading">
+												<div class="collapse-card__title">
+													<h4 class="text-center">Módulo Configuración
+														<div class="checkbox modulo">
+															<label>
+																<input type="checkbox">
+															</label>
+														</div>
+													</h4>
 												</div>
-											</h4>
-										</div>
-									</div>
-									<div class="collapse-card__body">
-										<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-											<div class="panel panel-default">
-												<div class="panel-heading">Principal
-													<div class="checkbox blanco">
-														<label>
-															<input type="checkbox">
-														</label>
+											</div>
+											<div class="collapse-card__body">
+												<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+													<div class="panel panel-default">
+														<div class="panel-heading">Principal
+															<div class="checkbox blanco">
+																<label>
+																	<input type="checkbox">
+																</label>
+															</div>
+														</div>
+														<div class="panel-body">
+															<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																<div class="checkbox">
+																	<label><input type="checkbox" name="franquicias"> Guardar</label>
+																</div>
+															</div>
+														</div>
 													</div>
 												</div>
-												<div class="panel-body">
-													<div class="panel-body">
-														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-															<div class="checkbox">
-																<label><input type="checkbox" name="franquicias"> Guardar</label>
+												<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+													<div class="panel panel-default">
+														<div class="panel-heading">Ticket
+															<div class="checkbox blanco">
+																<label>
+																	<input type="checkbox">
+																</label>
 															</div>
 														</div>
 													</div>
 												</div>
 											</div>
 										</div>
-										<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-											<div class="panel panel-default">
-												<div class="panel-heading">Ticket
-													<div class="checkbox blanco">
-														<label>
-															<input type="checkbox">
-														</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+										<div class="collapse-card">
+											<div class="collapse-card__heading">
+												<div class="collapse-card__title">
+													<h4 class="text-center">Módulo Reproductor Imágenes
+														<div class="checkbox modulo">
+															<label>
+																<input type="checkbox">
+															</label>
+														</div>
+													</h4>
+												</div>
+											</div>
+											<div class="collapse-card__body">
+												<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+													<div class="panel panel-default">
+														<div class="panel-heading">Reproductor
+															<div class="checkbox blanco">
+																<label>
+																	<input type="checkbox">
+																</label>
+															</div>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -921,11 +1195,13 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+
+
+							<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 								<div class="collapse-card">
 									<div class="collapse-card__heading">
 										<div class="collapse-card__title">
-											<h4 class="text-center">Módulo Reproductor Imágenes
+											<h4 class="text-center">Módulo Monitoreo Vendedor
 												<div class="checkbox modulo">
 													<label>
 														<input type="checkbox">
@@ -935,21 +1211,61 @@
 										</div>
 									</div>
 									<div class="collapse-card__body">
-										<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-											<div class="panel panel-default">
-												<div class="panel-heading">Reproductor
-													<div class="checkbox blanco">
-														<label>
-															<input type="checkbox">
-														</label>
-													</div>
+										<div class="panel panel-default">
+											<div class="panel-heading">Monitoreo
+												<div class="checkbox blanco">
+													<label>
+														<input type="checkbox">
+													</label>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+						</div><!--TERMINA MODULO VENTAS-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 					</div>
 				</div>
 			</div>

@@ -10,7 +10,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-xs-12 col-sm-9 col-md-9 col-lg-10">
+	<div class="col-xs-12 col-sm-9 col-md-9 col-lg-10 animatedfadeIn">
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<h3 class="text-center">Listar Categorias</h3>

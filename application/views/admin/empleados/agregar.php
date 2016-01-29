@@ -85,19 +85,19 @@
 						<div class="col-lg-3 col-md-4 col-sm-6">
 							<div class="form-group input-group reloj">
 								<label class="control-label azul">Hora Entrada</label>
-							    <input type="text" class="form-control azul">
+							    <input type="text" class="form-control azul" name="hora_entrada">
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6">
 							<div class="form-group input-group reloj">
 								<label class="control-label azul">Hora Salida</label>
-							    <input type="text" class="form-control azul">
+							    <input type="text" class="form-control azul" name="hora_salida">
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6">
 							<div class="form-group input-group">
 								<label class="control-label azul">Sucursal</label>
-							    <select class="form-control azul">
+							    <select class="form-control azul" name="sucursal">
 							    	<option value="" disabled>Seleccione una sucursal</option>
 							    </select>
 							</div>

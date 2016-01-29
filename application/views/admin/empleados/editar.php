@@ -16,83 +16,83 @@
 			<div class="panel-body">
 				<form id="frmEditarEmpleado">
 					<div class="row animated fadeIn">
-						<h3 class="text-center">Editar al empleado <span id="codigo"><?php echo $empleado->codigo;?></span></h3>
+						<h3 class="text-center">Editar al empleado</h3>
 						<div class="col-lg-3 col-md-4 col-sm-6">
 							<div class="form-group">
 								<label class="control-label azul" for="txtCodigo">Código</label>
-								<input class="form-control azul" id="txtCodigo" name="codigo" value="<?php echo $empleado->codigo;?>" type="text" required>
+								<input class="form-control azul" id="txtCodigo" name="codigo" value="<?php echo $empleado->Clave;?>" type="text" required>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6">
 							<div class="form-group">
 								<label class="control-label azul" for="txtNombre">Nombre</label>
-								<input class="form-control azul" id="txtNombre" name="nombre" value="<?php echo $empleado->nombre;?>" type="text" required>
+								<input class="form-control azul" id="txtNombre" name="nombre" value="<?php echo $empleado->Nombre;?>" type="text" required>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6">
 							<div class="form-group">
 								<label class="control-label azul" for="txtApellidos">Apellidos</label>
-								<input class="form-control azul" id="txtApellidos" name="apellidos" value="<?php echo $empleado->apellidos;?>" type="text" required>
+								<input class="form-control azul" id="txtApellidos" name="apellidos" value="<?php echo $empleado->Apellidos;?>" type="text" required>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6">
 							<div class="form-group">
 								<label class="control-label azul" for="txtFechaNac">Fecha de Nacimiento</label>
 								<i class="icon-calendario caledario"></i>
-								<input class="form-control azul date" id="txtFechaNac" value="<?php echo $empleado->fecha_nacimiento;?>" name="fecha_nacimiento" type="text" required="">
+								<input class="form-control azul date" id="txtFechaNac" value="<?php echo $empleado->FechaNacimiento;?>" name="fecha_nacimiento" type="text" required="">
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6">
 							<div class="form-group">
 								<label class="control-label azul" for="txtDireccion">Dirección</label>
-								<input class="form-control azul" id="txtDireccion" name="direccion" value="<?php echo $empleado->direccion;?>" type="text" required>
+								<input class="form-control azul" id="txtDireccion" name="direccion" value="<?php echo $empleado->Direccion;?>" type="text" required>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6">
 							<div class="form-group">
 								<label class="control-label azul" for="txtEmail">Correo Electrónico</label>
 								<i class="icon-arroba"></i>
-								<input class="form-control azul" id="txtEmail" name="email" value="<?php echo $empleado->email;?>" type="email" required>
+								<input class="form-control azul" id="txtEmail" name="email" value="<?php echo $empleado->Mail;?>" type="email" required>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6">
 							<div class="form-group">
 								<label class="control-label azul" for="txtTelefono">Teléfono</label>
 								<i class="icon-telefono"></i>
-								<input class="form-control azul" id="txtTelefono" name="telefono" value="<?php echo $empleado->telefono;?>" title="Ingresa un telefono válido" type="text" required>
+								<input class="form-control azul" id="txtTelefono" name="telefono" value="<?php echo $empleado->Telefono;?>" title="Ingresa un telefono válido" type="text" required>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6">
 							<div class="form-group">
 								<label class="control-label azul" for="txtCelular">Celular</label>
 								<i class="icon-cel"></i>
-								<input class="form-control azul" id="txtCelular" name="celular" value="<?php echo $empleado->celular;?>" title="Ingresa un telefono válido" type="text" required>
+								<input class="form-control azul" id="txtCelular" name="celular" value="<?php echo $empleado->Celular;?>" title="Ingresa un telefono válido" type="text" required>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6">
 							<div class="form-group">
 								<label class="control-label azul" for="txtSalario">Salario por hora</label>
 								<i class="icon-dolar"></i>
-							  	<input type="number" min="1" id="txtSalario" name="salario_hora" value="<?php echo $empleado->salario_hora;?>" class="form-control azul" required>
+							  	<input type="number" min="1" id="txtSalario" name="salario_hora" value="<?php echo $empleado->SueldoHora;?>" class="form-control azul" required>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6">
 							<div class="form-group">
 								<label class="control-label azul" for="txtTiempoComida">Tiempo Comida</label>
 								<i class="icon-reloj"></i>
-								<input class="form-control azul" id="txtTiempoComida" name="tiempo_comida" type="number" value="<?php echo $empleado->tiempo_comida;?>" min="1" data-toggle="tooltip" data-placement="bottom" title="Tiempo en minutos" required>
+								<input class="form-control azul" id="txtTiempoComida" name="tiempo_comida" type="number" value="<?php echo $empleado->TiempoComida;?>" min="1" data-toggle="tooltip" data-placement="bottom" title="Tiempo en minutos" required>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6">
 							<div class="form-group input-group reloj">
 								<label class="control-label azul">Hora Entrada</label>
-							    <input type="text" class="form-control azul">
+							    <input type="text" class="form-control azul" name="hora_entrada" value="<?php echo $empleado->HoraEntrada;?>">
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6">
 							<div class="form-group input-group reloj">
 								<label class="control-label azul">Hora Salida</label>
-							    <input type="text" class="form-control azul">
+							    <input type="text" class="form-control azul" name="hora_salida" value="<?php echo $empleado->HoraSalida;?>">
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6">
@@ -107,15 +107,17 @@
 							<div class="form-group">
 								<div class="fileinput fileinput-new" data-provides="fileinput">
 									<div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
-										<img src="<?php echo base_url('assets/img/empleados/').'/'.$empleado->foto;?>" alt="...">
+										<img src="<?php echo base_url('assets/img/empleados/').'/'.$empleado->NomImagen;?>" alt="...">
 									</div>
 									<div class="text-center">
 										<span class="btn btn-default btn-file btn-raised btn-xs top"><span class="fileinput-new"><i class="icon-foto"></i> Seleccionar</span><span class="fileinput-exists"><i class="icon-regresar"></i> Cambiar</span><input class="subir" type="file" name="foto"></span>
 										<a href="#" class="btn btn-default fileinput-exists btn-raised btn-xs top" data-dismiss="fileinput"><i class="icon-cerrar"></i> Quitar</a>
 									</div>
 								</div>
-								<input type="hidden" name="foto_antigua" value="<?php echo $empleado->foto;?>">
-								<input type="hidden" name="codigo_anterior" value="<?php echo $empleado->codigo;?>">
+								<input type="hidden" name="IdPersona" value="<?php echo $empleado->IdPersona;?>">
+								<input type="hidden" name="IdEmpleado" value="<?php echo $empleado->IdEmpleado;?>">
+								<input type="hidden" name="foto_antigua" value="<?php echo $empleado->NomImagen;?>">
+								<input type="hidden" name="codigo_anterior" value="<?php echo $empleado->Clave;?>">
 							</div>
 						</div>
 					</div>
@@ -181,17 +183,24 @@
 			jQuery.ajax({
 				url: "<?php echo base_url('empleados/editarEmpleado');?>",
 				type: 'POST',
-				data: form.serialize()+"&foto="+$('.fileinput-preview img').attr('src')+"&idold="+$('#codigo').text(),
+				data: form.serialize()+"&foto="+$('.fileinput-preview img').attr('src'),
 				dataType:'json',
 				beforeSend:function(){
 					$('#barra').fadeIn();
 				},
 				success: function(data, textStatus, xhr) {
 					$('#barra').fadeOut();
-					if(data){
-						mostarMensaje('Empleado editado correctamente','ok')
+					if(data.mensaje)
+					{
+						mostarMensaje(data.mensaje,'ok')
 					}
-					else{
+					else
+					if(data)
+					{
+						mostarMensaje('Cliente agregado correctamente','ok');
+					}
+					else
+					{
 						mostarMensaje('El codigo ya existe, verifíquelo','alerta');
 					}
 				},
